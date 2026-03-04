@@ -107,7 +107,7 @@ public class Main {
                     System.out.println("Value inserted successfully!");
                     break;
                 case 4:
-                    System.out.println("Number of nodes in the linked list is: " + list.countNodes());
+                    System.out.println("Number of nodes in the linked list is: " + (list.countNodes() + 1));
                     break;
                 case 5:
                     System.out.print("Enter a value to get an index from: ");

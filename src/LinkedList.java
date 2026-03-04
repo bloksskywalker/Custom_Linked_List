@@ -26,7 +26,7 @@ public class LinkedList {
 
     //Get the number of nodes, used in other methods here.
     public int countNodes() {
-        int count = 0;
+        int count = -1;
         ListNode cur = head;
         while (cur != null) {
             count++;
@@ -63,6 +63,10 @@ public class LinkedList {
     public void insertAt(int index, int data) {
         if (index == 0) {
             addFirst(data);
+            return;
+        }
+        if (index == (countNodes()) + 1) {
+            addLast(data);
             return;
         }
         checkIndex(index - 1);
@@ -150,7 +154,7 @@ public class LinkedList {
     //Debug command to check if list object exists, closes program with error if it does not.
     //Basic error checking.
     private void checkIndex(int index) {
-        if (index < 0 || index >= countNodes()) {
+        if (index >= countNodes() || index < 0) {
             System.out.println("FAILED INDEX CHECK! Result of operation would be program crash. See more details below.");
             throw new IndexOutOfBoundsException("Attempted to access Index: " + index + ", But the list is only Size: " + countNodes());
         }
